@@ -11,6 +11,8 @@
   "dependencies": {
     "@heroui/react": "^3.0.0-beta.5",
     "@heroui/styles": "^3.0.0-beta.5",
+    "@iconify/react": "^6.0.2",
+    "@reduxjs/toolkit": "^2.11.2",
     "apexcharts": "^4.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -22,6 +24,7 @@
     "nextjs-toploader": "^3.7.15",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-redux": "^9.2.0",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
