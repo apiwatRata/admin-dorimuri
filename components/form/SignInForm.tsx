@@ -1,7 +1,18 @@
+'use client';
+
 import { Button, Card, Form, Label, Input, Separator } from '@heroui/react';
 import {Icon} from "@iconify/react";
+import { signInWithGoogle } from "@/libs/firebase/auth";
+import { createSession } from "@/actions/auth-actions";
 
 export default function SignInForm() {
+    const handleSignIn = async () => {
+        const userUid = await signInWithGoogle();
+        if (userUid) {
+            await createSession(userUid);
+        }
+    };
+
     return (
         <Card>
             <Card.Header>
@@ -26,7 +37,7 @@ export default function SignInForm() {
                         </div>
                         <Separator className="my-4"/>
                         <div className="flex flex-col gap-1">
-                            <Button className="w-full" variant="tertiary">
+                            <Button onClick={handleSignIn} className="w-full" variant="tertiary">
                                 <Icon icon="devicon:google" />
                                 Sign in with Google
                             </Button>

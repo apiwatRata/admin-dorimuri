@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/components/ReduxProvider";
-import { store } from "@/store/store";
+import { store } from "@/hooks/store";
 
 const geistSans = Geist({
   variable: "--font-inter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
